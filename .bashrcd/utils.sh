@@ -49,3 +49,7 @@ tgs() {
     echo $para;
     bash -c "telegram-cli --json -W -e $para";
 }
+
+function prettycsv {
+    cat $1 | perl -pe 's/((?<=,)|(?<=^)),/ ,/g;' | column -t -s, | less -S
+}
