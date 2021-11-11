@@ -51,5 +51,5 @@ tgs() {
 }
 
 function prettycsv {
-    cat $1 | perl -pe 's/((?<=,)|(?<=^)),/ ,/g;' | column -t -s, | less -S
+    cat $1 | perl -pe 's/((?<=,)|(?<=^)),/ ,/g;' | column -t -s,
 }
