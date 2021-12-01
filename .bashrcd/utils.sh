@@ -53,3 +53,7 @@ tgs() {
 function prettycsv {
     cat $1 | perl -pe 's/((?<=,)|(?<=^)),/ ,/g;' | column -t -s,
 }
+
+rndsha1() {
+    head -c 999 /dev/urandom | sha1sum
+}
