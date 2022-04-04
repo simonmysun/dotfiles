@@ -3,4 +3,4 @@ ln -s /home/mysun/git/simonmysun/praxis/dotfiles/.vimrc ~/.vimrc
 ln -s /home/mysun/git/simonmysun/praxis/dotfiles/.bashrc ~/.bashrc
 ln -s /home/mysun/git/simonmysun/praxis/dotfiles/.bashrcd ~/.bashrcd
 ln -s /home/mysun/git/simonmysun/praxis/dotfiles/.tmux.conf ~/.tmux.conf
-
+ln -s /home/mysun/git/simonmysun/praxis/dotfiles/.mintty ~/.mintty
