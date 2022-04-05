@@ -110,14 +110,9 @@ source ~/.bashrcd/utils.sh
 export PATH=$HOME/local/bin:$PATH
 export GOPATH=$HOME/.go
 export NODE_PATH=$HOME/local/lib/node_modules
-PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
 LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64\
        ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-
-source /usr/share/nvm/init-nvm.sh
-
-PATH=$HOME/.gem/ruby/2.5.0/bin${PATH:+:${PATH}}
-
+export TERM=tmux-256color
 
 PATH="/home/mysun/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/mysun/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
