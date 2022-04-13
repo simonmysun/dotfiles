@@ -57,3 +57,7 @@ function prettycsv {
 rndsha1() {
     head -c 999 /dev/urandom | sha1sum
 }
+
+history_here() {
+    grep "### $PWD$" ~/.bash_history_detailed
+}
