@@ -96,6 +96,9 @@ function PreCommand() {
 trap "PreCommand" DEBUG
 export COLUMNS
 FIRST_PROMPT=1
+
+source ~/utils/hcmnt.sh
+
 function PostCommand() {
     AT_PROMPT=1
     printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"
@@ -104,6 +107,7 @@ function PostCommand() {
         return
     fi
     # echo "Running PostCommand"
-    print_time 
+    print_time
+    hcmnt -eity -l ~/.bash_history_detailed
 }
 PROMPT_COMMAND="PostCommand"
