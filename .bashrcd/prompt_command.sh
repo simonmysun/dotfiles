@@ -1,6 +1,8 @@
 # https://jichu4n.com/posts/debug-trap-and-prompt_command-in-bash/
 # https://github.com/jichu4n/bash-command-timer/blob/master/bash_command_timer.sh
 
+source ~/utils/hcmnt.sh
+
 BCT_TIME_FORMAT='%c %z'
 BCT_COLOR='37'
 if date +'%N' | grep -qv 'N'; then
@@ -92,12 +94,11 @@ function PreCommand() {
     history -a;
     printf "\033]0;%s@%s:%s::%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}" "$BASH_COMMAND"
     COMMAND_START_TIME=$(eval $BCTTime)
+    hcmnt -eity -l ~/.bash_history_detailed
 }
 trap "PreCommand" DEBUG
 export COLUMNS
 FIRST_PROMPT=1
-
-source ~/utils/hcmnt.sh
 
 function PostCommand() {
     AT_PROMPT=1
@@ -108,6 +109,5 @@ function PostCommand() {
     fi
     # echo "Running PostCommand"
     print_time
-    hcmnt -eity -l ~/.bash_history_detailed
 }
 PROMPT_COMMAND="PostCommand"

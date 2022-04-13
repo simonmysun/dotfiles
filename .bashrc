@@ -61,6 +61,7 @@ export TZ=Europe/Berlin
 source ~/.bashrcd/ps1.sh
 source ~/.bashrcd/prompt_command.sh
 source ~/.bashrcd/acd_func.sh
+source ~/.bashrcd/utils.sh
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -105,7 +106,6 @@ if ! shopt -oq posix; then
 fi
 
 
-source ~/.bashrcd/utils.sh
 
 export PATH=$HOME/local/bin:$PATH
 export GOPATH=$HOME/.go
