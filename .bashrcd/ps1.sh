@@ -211,7 +211,7 @@ function ps1 {
     fi;
     echo -n -e "${STYLE_DECORATION}]${STYLE_RESET}\n${STYLE_DECORATION}";
     if [ $JOBS -ne 0 ]; then
-        echo -n -e "${STYLE_DECORATION}[${STYLE_RESET}${STYLE_SECONDARY}${JOBS}${STYLE_RESET}${STYLE_DECORATION}]${STYLE_RESET} ";
+        echo -n -e "${STYLE_DECORATION}{${STYLE_RESET}${STYLE_SECONDARY}${JOBS}${STYLE_RESET}${STYLE_DECORATION}}${STYLE_RESET} ";
     fi;
     echo -n -e "${PROMPTUSER} ${STYLE_RESET}";
 }
