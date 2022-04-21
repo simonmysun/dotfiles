@@ -58,7 +58,11 @@ fi
 
 export TZ=Europe/Berlin
 
+source ~/.bashrcd/ps0.sh
 source ~/.bashrcd/ps1.sh
+source ~/.bashrcd/ps2.sh
+source ~/.bashrcd/ps3.sh
+source ~/.bashrcd/ps4.sh
 source ~/.bashrcd/prompt_command.sh
 source ~/.bashrcd/acd_func.sh
 source ~/.bashrcd/utils.sh
