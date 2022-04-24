@@ -204,16 +204,16 @@ function ps1 {
         echo -n -e $(exit_code_interp $EXIT_CODE)
         echo -n -e "${STYLE_RESET}"
     fi;
-    echo -n -e "${STYLE_DECORATION}[${STYLE_RESET}${STYLE_PRIMARY}${USERNAME}@${HOSTNAME}${STYLE_RESET} ${STYLE_SECONDARY}${WORKING_DIRECTORY}";
+    echo -n -e "${STYLE_DECORATION}[${STYLE_RESET}${STYLE_PRIMARY}${USERNAME}${STYLE_RESET}${STYLE_DECORATION}@${STYLE_RESET}${STYLE_PRIMARY}${HOSTNAME}${STYLE_RESET} ${STYLE_SECONDARY}${WORKING_DIRECTORY}";
     M=$(version_control_info);
     if [ "$M" != "" ]; then
         echo -n -e "${STYLE_INFO}($M)${STYLE_RESET}";
     fi;
-    echo -n -e "${STYLE_DECORATION}]${STYLE_RESET}\n${STYLE_DECORATION}";
+    echo -n -e "${STYLE_DECORATION}]${STYLE_RESET}\n";
     if [ $JOBS -ne 0 ]; then
         echo -n -e "${STYLE_DECORATION}{${STYLE_RESET}${STYLE_SECONDARY}${JOBS}${STYLE_RESET}${STYLE_DECORATION}}${STYLE_RESET} ";
     fi;
-    echo -n -e "${PROMPTUSER} ${STYLE_RESET}";
+    echo -n -e "${STYLE_DECORATION}${PROMPTUSER} ${STYLE_RESET}";
 }
 
 # prompt variables are substituted before expanded
