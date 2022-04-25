@@ -116,7 +116,7 @@ export GOPATH=$HOME/.go
 export NODE_PATH=$HOME/local/lib/node_modules
 LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64\
        ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-export TERM=tmux-256color
+export TERM=xterm-256color
 
 PATH="/home/mysun/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/mysun/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
