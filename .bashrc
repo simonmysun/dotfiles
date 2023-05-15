@@ -113,6 +113,7 @@ fi
 
 export PATH=$HOME/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.gem/ruby/3.0.0/bin:$PATH
 export GOPATH=$HOME/.go
 export NODE_PATH=$HOME/local/lib/node_modules
 LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64\
