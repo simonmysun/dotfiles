@@ -10,11 +10,9 @@ alias thunar='setsid thunar'
 alias ytdl='youtube-dl --all-subs'; # --proxy socks5://127.0.0.1:1080'
 #alias 'you-get'='you-get -s 127.0.0.1:1080'
 #alias 7zx='7zx_f() { 7z x "-o$1"; };7zx_f;'
-alias doit='npm run start --'
 sqt="'"
 alias killvlc='kill -9 $(killall -v vlc 2>&1 | sed -n "s/^.*(\([0-9]\+\)).*$/\1/p" -)'
 alias dedate='node ~/utils/time.js'
-alias tg='telegram-cli -W -e'
 
 function _please(){
     if [ -z $1 ]; then
