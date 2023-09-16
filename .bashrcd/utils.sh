@@ -62,3 +62,9 @@ history_here() {
 }
 
 complete -W "$(echo `cat ~/.ssh/config | grep "^Host " |awk '{print $2}'`;)" ssh
+
+srcenv() {
+    set -o allexport;
+    source $1;
+    set +o allexport;
+}
