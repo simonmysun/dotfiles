@@ -117,7 +117,8 @@ export PATH=$HOME/.gem/ruby/3.0.0/bin:$PATH
 export GOPATH=$HOME/.go
 export NODE_PATH=$HOME/local/lib/node_modules
 LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64\
-       ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+    ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export PATH=/opt/cuda/bin:$PATH
 export TERM=xterm-256color
 
 PATH="/home/mysun/perl5/bin${PATH:+:${PATH}}"; export PATH;
@@ -125,6 +126,9 @@ PERL5LIB="/home/mysun/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB
 PERL_LOCAL_LIB_ROOT="/home/mysun/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/mysun/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/mysun/perl5"; export PERL_MM_OPT;
+
+PATH="/home/mysun/.cargo/bin${PATH:+:${PATH}}"; export PATH;
+
 
 GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx

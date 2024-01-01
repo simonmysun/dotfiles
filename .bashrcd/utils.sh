@@ -4,7 +4,7 @@ alias vi="bash -c 'emacsclient -t {%0}'"
 alias vim='emacsclient -t'
 alias gvim='emacsclient -c'
 alias emacs='setsid emacsclient -c'
-alias diff='colordiff'
+alias diff='colordiff -W $(( $(tput cols) - 2 ))'
 alias bat='bat --color=always --paging=never'
 alias thunar='setsid thunar'
 alias ytdl='youtube-dl --all-subs'; # --proxy socks5://127.0.0.1:1080'
