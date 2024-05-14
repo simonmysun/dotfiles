@@ -68,7 +68,3 @@ srcenv() {
     source $1;
     set +o allexport;
 }
-
-show_docker_container_ip() {
-    docker ps -q | xargs -n 1 docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}} {{end}} {{ .Name }}' | sed 's/ \// /'
-}
