@@ -31,3 +31,6 @@
 
 (straight-use-package '(tsx-mode :type git :host github :repo "orzechowskid/tsx-mode.el"))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-mode))
+
+(require 'zone)
+(zone-when-idle 120)
