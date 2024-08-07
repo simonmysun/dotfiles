@@ -134,3 +134,5 @@ QT_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
 SDL_IM_MODULE=fcitx
 GLFW_IM_MODULE=ibus
+
+PATH="/home/mysun/git/simonmysun/ell${PATH:+:${PATH}}"; export PATH;
