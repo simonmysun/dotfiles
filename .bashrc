@@ -111,6 +111,8 @@ fi
 
 
 
+export HISTFILESIZE=
+export HISTSIZE=
 export PATH=$HOME/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export GOPATH=$HOME/.go
@@ -136,3 +138,4 @@ SDL_IM_MODULE=fcitx
 GLFW_IM_MODULE=ibus
 
 PATH="/home/mysun/git/simonmysun/ell${PATH:+:${PATH}}"; export PATH;
+
