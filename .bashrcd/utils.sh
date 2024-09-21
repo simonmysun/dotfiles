@@ -14,6 +14,17 @@ sqt="'"
 alias killvlc='kill -9 $(killall -v vlc 2>&1 | sed -n "s/^.*(\([0-9]\+\)).*$/\1/p" -)'
 alias dedate='node ~/utils/time.js'
 
+function tmux() {
+    echo alias called
+    if [ ${#} -eq 0 ]; then
+        echo try attach
+        /usr/bin/tmux a || /usr/bin/tmux
+    else
+        echo arguments passed
+        /usr/bin/tmux ${@}
+    fi
+}
+
 function _please(){
     if [ -z $1 ]; then
         #echo `history | cut -c 8- | tail -n 2 | head -n 1`;
