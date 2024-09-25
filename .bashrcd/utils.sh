@@ -14,6 +14,12 @@ sqt="'"
 alias killvlc='kill -9 $(killall -v vlc 2>&1 | sed -n "s/^.*(\([0-9]\+\)).*$/\1/p" -)'
 alias dedate='node ~/utils/time.js'
 
+function rsync_here() {
+    target_host=$1;
+    target_path=$2;
+    rsync --archive --itemize-changes --compress-level=9 --partial --progress --info=progress2 --delete-after --fuzzy --checksum ${2} ${1}:${2};
+}
+
 function tmux() {
     echo alias called
     if [ ${#} -eq 0 ]; then
