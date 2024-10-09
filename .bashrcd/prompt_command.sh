@@ -1,7 +1,7 @@
 # https://jichu4n.com/posts/debug-trap-and-prompt_command-in-bash/
 # https://github.com/jichu4n/bash-command-timer/blob/master/bash_command_timer.sh
 
-source ~/utils/hcmnt.sh
+source ~/.bashrcd/hcmnt.sh
 
 BCT_TIME_FORMAT='%c %z'
 BCT_COLOR='37'
