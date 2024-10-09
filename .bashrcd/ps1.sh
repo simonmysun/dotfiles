@@ -198,7 +198,7 @@ function ps1 {
     STYLE_DECORATION="$LBRK$(tput setaf 36; tput dim)$RBRK";
     STYLE_PRIMARY="$LBRK$(tput setaf 2; tput bold)$RBRK";
     STYLE_SECONDARY="$LBRK$(tput setaf 4; tput bold)$RBRK"
-    STYLE_INFO="$LBRK$(tput setaf 11; tput setab 0)$RBRK";
+    STYLE_INFO="$LBRK$(tput setaf 11)$RBRK";
     if [ $EXIT_CODE -ne 0 ]; then
         echo -n -e "${STYLE_ALERT}${EXIT_CODE}${STYLE_RESET}${STYLE_INFO}";
         echo -n -e $(exit_code_interp $EXIT_CODE)
