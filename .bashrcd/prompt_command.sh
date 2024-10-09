@@ -3,6 +3,11 @@
 
 source ~/.bashrcd/hcmnt.sh
 
+# alias date to gdate if available
+if hash gdate 2>/dev/null; then
+    alias date='gdate'
+fi
+
 BCT_TIME_FORMAT='%c %z'
 BCT_COLOR='37'
 if date +'%N' | grep -qv 'N'; then
