@@ -86,3 +86,11 @@ srcenv() {
     source $1;
     set +o allexport;
 }
+
+docker_run() {
+    if [ $# -le 1 ]; then
+        echo "Usage: docker_run <image> <command>";
+        return 64;
+    fi
+    docker run --rm -it -v "$PWD":/usr/src/myapp -w /usr/src/myapp $@;
+}
