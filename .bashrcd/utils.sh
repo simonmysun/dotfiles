@@ -79,7 +79,11 @@ history_here() {
     grep "### $PWD$" ~/.bash_history_detailed
 }
 
-complete -W "$(echo `cat ~/.ssh/config | grep "^Host " |awk '{print $2}'`;)" ssh
+if [ -d "$HOME/.ssh/config.d" ]; then
+    complete -W "$(echo `cat ~/.ssh/config ~/.ssh/config.d/*.conf | grep "^Host " |awk '{print $2}'`;)" ssh
+else
+    complete -W "$(echo `cat ~/.ssh/config | grep "^Host " |awk '{print $2}'`;)" ssh
+fi
 
 srcenv() {
     set -o allexport;
