@@ -15,13 +15,19 @@ alias killvlc='kill -9 $(killall -v vlc 2>&1 | sed -n "s/^.*(\([0-9]\+\)).*$/\1/
 alias dedate='node ~/utils/time.js'
 alias df='df --exclude-type=tmpfs --exclude-type=devtmpfs --exclude-type=squashfs'
 
-function rsync_here() {
-    target_host=$1;
-    target_path=$2;
-    rsync --archive --itemize-changes --compress-level=9 --partial --progress --info=progress2 --delete-after --fuzzy --checksum ${2} ${1}:${2};
+rsync_here() {
+    if [ ${#} -ne 1 ]; then
+        echo "Usage: rsync_here <target_host>";
+        return 64;
+    fi
+    target_host="${1}";
+    target_path="${PWD}";
+    echo "${target_path%/}/ >>> ${target_host}:${target_path%/}";
+    # source with trailing slash, target without trailing slash
+    rsync --archive --itemize-changes --compress-level=9 --partial --progress --info=progress2 --delete-after --fuzzy --checksum "${target_path%/}/" "${target_host}:${target_path%/}";
 }
 
-function tmux() {
+tmux() {
     echo alias called
     if [ ${#} -eq 0 ]; then
         echo try attach
@@ -32,7 +38,7 @@ function tmux() {
     fi
 }
 
-function _please(){
+_please(){
     if [ -z $1 ]; then
         #echo `history | cut -c 8- | tail -n 2 | head -n 1`;
         sudo `history | cut -c 8- | tail -n 2 | head -n 1`;
@@ -43,7 +49,7 @@ function _please(){
 };
 alias please=_please
 
-function keepretrying() {
+keepretrying() {
     while true; do
         command && break;
         sleep 5
