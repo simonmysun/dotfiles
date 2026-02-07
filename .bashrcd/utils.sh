@@ -3,7 +3,7 @@ alias term3='term&term&term'
 alias vi="bash -c 'emacsclient -t {%0}'"
 alias vim='emacsclient -t -a ""'
 alias gvim='emacsclient -c -a ""'
-alias emacs='setsid emacsclient -t -a ""'
+alias emacs='emacsclient -t -a ""'
 alias diff='colordiff -W $(( $(tput cols) - 2 ))'
 alias bat='bat --color=always --paging=never'
 alias thunar='setsid thunar'
@@ -87,8 +87,8 @@ history_here() {
 }
 
 if [ -d "$HOME/.ssh/hosts.d" ]; then
-    complete -W "$(echo `cat ~/.ssh/config ~/.ssh/hosts.d/*.conf | grep "^Host " |awk '{print $2}'`;)" ssh
-    complete -W "$(echo `cat ~/.ssh/config ~/.ssh/hosts.d/*.conf | grep "^Host " |awk '{print $2}'`;)" scp
+    complete -W "$(echo `cat ~/.ssh/config ~/.ssh/hosts.d/*/*/*.conf | grep "^Host " |awk '{print $2}'`;)" ssh
+    complete -W "$(echo `cat ~/.ssh/config ~/.ssh/hosts.d/*/*/*.conf | grep "^Host " |awk '{print $2}'`;)" scp
 else
     complete -W "$(echo `cat ~/.ssh/config | grep "^Host " |awk '{print $2}'`;)" ssh
     complete -W "$(echo `cat ~/.ssh/config | grep "^Host " |awk '{print $2}'`;)" scp
