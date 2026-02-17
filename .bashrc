@@ -122,6 +122,8 @@ LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64\
 export PATH=/opt/cuda/bin:$PATH
 export TERM=xterm-256color
 
+source /usr/share/doc/pkgfile/command-not-found.bash
+
 PATH="/home/mysun/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/mysun/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/mysun/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
