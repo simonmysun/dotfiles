@@ -87,12 +87,13 @@ history_here() {
 }
 
 if [ -d "$HOME/.ssh/hosts.d" ]; then
-    complete -W "$(echo `cat ~/.ssh/config ~/.ssh/hosts.d/*/*/*.conf | grep "^Host " |awk '{print $2}'`;)" ssh
-    complete -W "$(echo `cat ~/.ssh/config ~/.ssh/hosts.d/*/*/*.conf | grep "^Host " |awk '{print $2}'`;)" scp
+    _ssh_hosts="$(awk '/^[Hh]ost / { for (i = 2; i <= NF; i++) if ($i !~ /[*?%]/) print $i }' ~/.ssh/config ~/.ssh/hosts.d/*/*/*.conf 2>/dev/null | sort -u)"
 else
-    complete -W "$(echo `cat ~/.ssh/config | grep "^Host " |awk '{print $2}'`;)" ssh
-    complete -W "$(echo `cat ~/.ssh/config | grep "^Host " |awk '{print $2}'`;)" scp
+    _ssh_hosts="$(awk '/^[Hh]ost / { for (i = 2; i <= NF; i++) if ($i !~ /[*?%]/) print $i }' ~/.ssh/config 2>/dev/null | sort -u)"
 fi
+complete -W "$_ssh_hosts" ssh
+complete -W "$_ssh_hosts" scp
+unset _ssh_hosts
 
 srcenv() {
     set -o allexport;
